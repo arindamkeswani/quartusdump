@@ -1,0 +1,20 @@
+module jkff(j,k,q,cl);
+input j,k,cl;
+output q;
+
+reg q;
+always@(posedge cl)
+begin
+	case({j,k})
+	begin
+	2'b00: q<=q;
+	2'b01: q<=1'b0;
+	2'b10: q<=1'b1;
+	2'b11: q<=(~q);
+	end
+endcase
+end
+endmodule 
+
+module jkfftestbench;
+reg 

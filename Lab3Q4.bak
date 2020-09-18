@@ -1,0 +1,11 @@
+module lab3(A,B,C,D,f);
+	input A,B,C,D;
+	output f;
+	
+	wire u,v,w;
+	
+	and(u,~A,D);
+	and(v,~C,D);
+	and(w,~B,D);
+	or(f,u,v,w);
+endmodule

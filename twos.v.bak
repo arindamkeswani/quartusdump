@@ -1,0 +1,35 @@
+module twos (At,Bt,Ct,Dt,c0,Ao,Bo,Co,Do);
+input At,Bt,Ct,Dt,c0;
+output Ao,Bo,Co,Do;
+wire Atn,Btn,Ctn,Dtn,c1,c2,c3,c4;
+assign Atn=~A;
+assign Btn=~B;
+assign Ctn=~C;
+assign Dtn=~D;
+
+half adder h1(
+	.A(Atn),
+	.B(c0),
+	.Sum(Ao),
+	.Carry(c1)
+	);
+half adder h2(
+	.A(Btn),
+	.B(c1),
+	.Sum(Bo),
+	.Carry(c2)
+	);
+half adder h3(
+	.A(Ctn),
+	.B(c2),
+	.Sum(Co),
+	.Carry(c3)
+	);
+half adder h4(
+	.A(Dtn),
+	.B(c3),
+	.Sum(Do),
+	.Carry(c4)
+	);
+
+	
